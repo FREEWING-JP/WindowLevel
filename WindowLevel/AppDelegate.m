@@ -10,17 +10,81 @@
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSApplication *app;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    app = [NSApplication sharedApplication];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
 
+- (IBAction)mnNomalWin:(id)sender {
+    [app.keyWindow setLevel:NSNormalWindowLevel];
+}
+
+- (IBAction)mnFloatingWin:(id)sender {
+    [app.keyWindow setLevel:NSFloatingWindowLevel];
+}
+
+- (IBAction)mnScreenSaverWin:(id)sender {
+    [app.keyWindow setLevel:NSScreenSaverWindowLevel];
+}
+
+- (IBAction)mnStatusWin:(id)sender {
+    [app.keyWindow setLevel:NSStatusWindowLevel];
+}
+
+- (IBAction)mnModalWin:(id)sender {
+    [app.keyWindow setLevel:NSModalPanelWindowLevel];
+}
+
+- (IBAction)NSPopupMenuWin:(id)sender {
+    [app.keyWindow setLevel:NSPopUpMenuWindowLevel];
+}
+
+- (IBAction)mnTornOffMenuWin:(id)sender {
+    [app.keyWindow setLevel:NSTornOffMenuWindowLevel];
+}
+
+- (IBAction)mnMainMenuWin:(id)sender {
+    [app.keyWindow setLevel:NSMainMenuWindowLevel];
+}
+
+- (IBAction)DeskTopWin:(id)sender {
+    [app.keyWindow setLevel:kCGDesktopWindowLevel];
+}
+
+- (IBAction)DeskTopIcon:(id)sender {
+    [app.keyWindow setLevel:kCGDesktopIconWindowLevel];
+}
+
+- (IBAction)AssistiveTechHighWin:(id)sender {
+    [app.keyWindow setLevel:kCGAssistiveTechHighWindowLevel];
+}
+
+- (IBAction)CursorWin:(id)sender {
+    [app.keyWindow setLevel:kCGCursorWindowLevel];
+}
+
+- (IBAction)DockWin:(id)sender {
+    [app.keyWindow setLevel:kCGDockWindowLevel];
+}
+
+- (IBAction)DraggingWin:(id)sender {
+    [app.keyWindow setLevel:kCGDraggingWindowLevel];
+}
+
+- (IBAction)HelpWin:(id)sender {
+    [app.keyWindow setLevel:kCGHelpWindowLevel];
+}
+
+- (IBAction)UtilityWin:(id)sender {
+    [app.keyWindow setLevel:kCGUtilityWindowLevel];
+}
 @end
